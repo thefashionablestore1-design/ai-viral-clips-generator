@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0c10"><title>ClipForge — AI video repurposing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="brand-icon">✳</span> clipforge<span class="brand-ai">AI</span></a>
+    <div class="workspace"><div class="workspace-mark">C</div><div><b>Creator workspace</b><small>Personal studio</small></div><span class="chevron">⌄</span></div>
+    <div class="nav-label">WORKSPACE</div><a class="nav-item active" href="#"><span>▦</span> Studio <kbd>⌘ 1</kbd></a><a class="nav-item" href="#projects"><span>◷</span> Recent projects</a>
+    <div class="nav-label tools-label">YOUR TOOLKIT</div><a class="nav-item" href="#"><span>✦</span> AI clip maker <i class="live-dot"></i></a><a class="nav-item muted" href="#"><span>▧</span> Brand kit <em>SOON</em></a>
+    <div class="sidebar-bottom"><div class="help-card"><span class="help-icon">?</span><b>Need a hand?</b><p>Get the most out of your clips.</p><a href="/api/docs" target="_blank">Visit help center <span>↗</span></a></div><div class="profile"><div class="avatar">C</div><div><b>Creator</b><small>Free plan</small></div><span class="dots">···</span></div></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div class="breadcrumbs">Workspace <span>/</span> <b>AI clip maker</b></div><div class="top-actions"><span class="status-pill"><i></i> All systems operational</span><button class="icon-btn" aria-label="Notifications">♧</button><div class="avatar small">C</div></div></header>
+    <section class="intro"><div><div class="eyebrow"><span class="sparkle">✦</span> YOUR AI-POWERED EDITING STUDIO</div><h1>Make every second <span>count.</span></h1><p>Turn long-form videos into scroll-stopping shorts. Your next viral moment starts here.</p></div><div class="intro-orb"><span>✳</span></div></section>
+    <section class="workspace-grid">
+      <div class="left-column">
+        <section class="panel source-panel"><div class="section-heading"><div class="number">01</div><div><h2>Bring your video</h2><p>Paste a YouTube link or upload a file you have rights to use.</p></div></div>
+          <div class="input-tabs"><button class="tab active" data-tab="url">◉ &nbsp;YouTube URL</button><button class="tab" data-tab="upload">↑ &nbsp;Upload a video</button></div>
+          <div id="urlPane" class="source-pane"><div class="url-input"><span class="youtube-mark">▶</span><input id="videoUrl" type="url" placeholder="https://www.youtube.com/watch?v=..." aria-label="YouTube video URL"><button id="pasteBtn" class="paste-btn">Paste</button></div><div class="input-note"><span>ⓘ</span> Only publicly accessible videos you own or are authorized to edit.</div></div>
+          <div id="uploadPane" class="source-pane hidden"><label class="upload-box" for="videoFile"><span class="upload-icon">↑</span><b>Drop your video here, or <u>browse files</u></b><small>MP4, MOV, MKV, WebM · Up to 1 GB</small><input type="file" id="videoFile" accept="video/mp4,video/quicktime,video/x-matroska,video/webm,video/x-msvideo,.m4v"></label></div>
+          <div class="divider"></div><div class="options-row"><div><b>Clips to generate</b><small>We’ll select the best moments</small></div><div class="stepper"><button id="minus" aria-label="Fewer clips">−</button><span id="clipCount">5</span><button id="plus" aria-label="More clips">+</button></div></div>
+          <button class="generate-btn" id="generate"><span class="btn-sparkle">✳</span> Find my viral moments <span class="arrow">→</span></button>
+          <div class="rights-note"><span>♢</span> By continuing, you confirm you have permission to process this video.</div>
+        </section>
+        <section class="panel progress-panel hidden" id="progressPanel"><div class="progress-head"><div><div class="eyebrow">YOUR PROJECT</div><h2 id="progressTitle">Analyzing your video</h2></div><span class="processing" id="processingBadge"><i></i> PROCESSING</span></div><p id="progressMessage">Getting things ready…</p><div class="progress-track"><div id="progressBar"></div></div><div class="progress-foot"><span id="progressPercent">0%</span><span>Great clips take a little time to find.</span></div><div class="error-msg hidden" id="errorMessage"></div></section>
+        <section class="panel results-panel hidden" id="resultsPanel"><div class="results-heading"><div><div class="eyebrow">YOUR PROJECT</div><h2>Your moments, ready to go.</h2><p id="resultSummary"></p></div><a class="download-all" id="downloadAll" href="#">↓ &nbsp;Download all</a></div><div id="clipsList" class="clips-list"></div></section>
+      </div>
+      <div class="right-column"><section class="preview-card"><div class="preview-top"><div><span class="preview-label">YOUR CREATIVE CANVAS</span><h3>From long-form<br>to <span>can’t-skip.</span></h3></div><div class="preview-live"><i></i> LIVE PREVIEW</div></div><div class="phone-stage"><div class="ambient ambient-one"></div><div class="ambient ambient-two"></div><div class="phone"><div class="phone-screen"><div class="phone-top"><span>9:41</span><span>●●● ▰</span></div><div class="demo-art"><div class="demo-sun"></div><div class="mountain m1"></div><div class="mountain m2"></div><div class="demo-person">◉</div><div class="demo-copy">THE MOMENT<br>EVERYTHING<br><span>CHANGED.</span></div><div class="demo-caption">and nobody saw it coming <b>✦</b></div><div class="social-rail"><span>♡<small>24.8k</small></span><span>◉<small>1,204</small></span><span>➤<small>Share</small></span></div><div class="demo-name">@yourchannel &nbsp; · &nbsp; original audio</div><div class="demo-play">▶</div></div></div></div><div class="float-chip chip-top"><span>✦</span> AI-picked moment</div><div class="float-chip chip-bottom"><span>▤</span> Captions, on point.</div></div><div class="preview-footer"><div><b>Made for the scroll.</b><small>From 16:9 to 9:16 in a heartbeat.</small></div><span class="format-tag">9:16 &nbsp;·&nbsp; 1080p</span></div></section>
+        <section class="tip-card"><span class="tip-icon">✧</span><div><b>A note on the magic</b><p>ClipForge finds real moments from your video's transcript. AI scores are a guide, not a promise of virality. Always review before sharing.</p></div></section></div>
+    </section>
+    <footer>Built for creators who have something to say. <span>ClipForge AI</span></footer>
+  </main>
+<script src="/static/app.js"></script>
+</body></html>
